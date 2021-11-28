@@ -4,12 +4,19 @@
 #include "arduino.h"
 #include "SPIFFS.h"
 
-class dataConfig  {
+class LedModel  {
     private:
-        String __fileName;
-        String __content="";
+        byte __pinLED;
+
+        boolean __ledState = LOW;
+
+        unsigned long __delayTime;
     public:
-        void Init(String filename);
-        String getData();
+        LedModel(byte pinLed);
+        void setState(boolean state);
+        void setDelaytime(unsigned long time);
+        boolean getState();
+        unsigned long getDelaytime();
+        byte getPin();
 };
 #endif

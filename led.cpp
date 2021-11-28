@@ -13,6 +13,7 @@ void ledBlink::_loop(){
         __ledState = !__ledState;
         digitalWrite(__pinLED,__ledState);
         __nextChangeState+=__delayTime;
+        //Serial.println(millis());
     }
 }
 byte ledBlink::getPin() {
