@@ -1,14 +1,15 @@
+#include "led.h"
 #define PINLED 14
+
+ledBlink ledBlynk(PINLED);
+
 // the setup function runs once when you press reset or power the board
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
-  pinMode(PINLED, OUTPUT);
+  ledBlynk.setBlink(500);
 }
 
 // the loop function runs over and over again forever
 void loop() {
-  digitalWrite(PINLED, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);                       // wait for a second
-  digitalWrite(PINLED, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);                       // wait for a second
-}
+  ledBlynk._loop();
+ }
